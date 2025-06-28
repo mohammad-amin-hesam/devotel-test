@@ -18,10 +18,6 @@ You can view the deployed version of the project here:
 
 ---
 
-## 🔧 Getting Started
-
-To run the project locally, make sure you have `pnpm` version `9.15.1` installed.
-
 ## ⚙️ Configuration
 
 Before running the project, create a `.env` file inside the `apps/web` directory with the following content:
@@ -29,6 +25,10 @@ Before running the project, create a `.env` file inside the `apps/web` directory
 ```env
 NEXT_PUBLIC_API_URL=https://assignment.devotel.io/api
 ```
+
+## 🔧 Getting Started
+
+To run the project locally, make sure you have `pnpm` version `9.15.1` installed.
 
 ### Development
 
