@@ -5,7 +5,7 @@ This is a [Monorepo](https://en.wikipedia.org/wiki/Monorepo) project built with 
 ### 🚀 Live Demo
 
 You can view the deployed version of the project here:  
-👉 [https://www.captionyar.ir](https://www.captionyar.ir)
+👉 [https://devotel.darkube.app/](https://devotel.darkube.app/)
 
 ---
 
