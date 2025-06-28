@@ -73,7 +73,7 @@ export function SubmissionsClientPage() {
           </div>
           <ResponsiveTable
             data={data?.data || []}
-            isLoading={isLoading}
+            isLoading={true}
             columns={formsColumns as PublicColumn[]}
           />
         </CardContent>

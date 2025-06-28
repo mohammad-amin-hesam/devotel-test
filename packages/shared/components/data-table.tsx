@@ -188,7 +188,7 @@ export function DataTable({
                   Array.from({ length: 10 }).map((_, rowIndex) => {
                     return (
                       <TableRow key={`row-${rowIndex}`}>
-                        {Array.from({ length: columns.length }).map(
+                        {Array.from({ length: 5 }).map(
                           (__, celIndex) => {
                             return (
                               <TableCell key={`cel-${celIndex}`}>
