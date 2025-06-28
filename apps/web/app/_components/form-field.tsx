@@ -171,7 +171,6 @@ export function FormField({ field }: FormFieldProps) {
         <div className="space-y-4 rounded-xl border p-4">
           <h4 className="font-semibold">{field.label}</h4>
           {field.fields?.map((subField) => {
-            console.log(subField);
             return <FormField key={subField.id} field={subField} />;
           })}
         </div>
