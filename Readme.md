@@ -1,4 +1,4 @@
-# Project Name
+# Devotel
 
 This is a [Monorepo](https://en.wikipedia.org/wiki/Monorepo) project built with Docker and CI/CD support. It showcases a structured, scalable architecture suitable for production environments.
 
