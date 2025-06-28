@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.9",
-    "@repo/logic": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@testing-library/dom": "^10.4.0",
