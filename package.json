@@ -1,0 +1,37 @@
+{
+  "name": "devotel",
+  "packageManager": "pnpm@9.15.1",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "build:web": "turbo build --filter web",
+    "dev": "turbo dev",
+    "dev:web": "turbo dev --filter web",
+    "start": "turbo start",
+    "start:web": "turbo start --filter web",
+    "test": "turbo test",
+    "test:web": "turbo test --filter web",
+    "test:shared": "turbo test --filter @repo/shared",
+    "test:watch": "turbo test:watch",
+    "test:watch:web": "turbo test:watch --filter web",
+    "test:watch:shared": "turbo test:watch --filter @repo/shared",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "clean": "turbo clean",
+    "pnpm-clean": "pnpm store prune",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.17.12",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "prettier": "^2.8.8",
+    "prettier-plugin-classnames": "^0.7.3",
+    "prettier-plugin-merge": "^0.7.1",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "turbo": "^2.4.0"
+  }
+}

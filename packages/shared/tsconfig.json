@@ -1,0 +1,10 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "include": [".", "types/**/*.d.ts"],
+  "compilerOptions": {
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
+  },
+  "exclude": ["dist", "build", "node_modules"]
+}

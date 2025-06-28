@@ -1,0 +1,22 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "react": ["./node_modules/@types/react"]
+    },
+    "jsx": "preserve"
+  },
+  "include": [
+    "types/**/*.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "tailwind.config.js",
+    ".",
+    "../../packages/shared/hooks/users",
+    "../../packages/shared/components/users"
+, "../../packages/shared/api/forms/types.ts"  ],
+  "exclude": ["node_modules"]
+}

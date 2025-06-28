@@ -1,0 +1,25 @@
+FROM node:20-alpine as builder
+
+WORKDIR /app
+
+COPY ./ /app
+
+# Create the pnpm-workspace.yaml file
+RUN echo 'packages:' > /app/pnpm-workspace.yaml && \
+  echo '  - "apps/web"' >> /app/pnpm-workspace.yaml && \
+  echo '  - "packages/*"' >> /app/pnpm-workspace.yaml
+
+ARG API_BASE_URL
+
+RUN echo "NEXT_PUBLIC_API_URL=${API_BASE_URL}" > /app/apps/web/.env
+
+RUN cat /app/pnpm-workspace.yaml
+
+RUN npm install -g pnpm
+
+RUN pnpm i
+RUN pnpm build:web
+
+EXPOSE 3000
+
+CMD ["pnpm", "run", "start:web"]
