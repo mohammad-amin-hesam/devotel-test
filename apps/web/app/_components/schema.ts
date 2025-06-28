@@ -15,10 +15,12 @@ export function makeZodSchema(fields: FormField[]): z.ZodObject<any> {
         case "text":
         case "date":
           baseSchema = z.string();
-          if (field.required) {
+          if (field.required && !field?.visibility?.dependsOn) {
             baseSchema = baseSchema.nonempty(
               "This field is required"
             );
+          } else {
+            baseSchema = baseSchema.optional();
           }
           if (field.validation?.pattern)
             baseSchema = baseSchema.regex(
@@ -28,7 +30,11 @@ export function makeZodSchema(fields: FormField[]): z.ZodObject<any> {
 
         case "number":
           baseSchema = z.number();
-          if (field.required) baseSchema = baseSchema;
+          if (field.required && !field?.visibility?.dependsOn) {
+            baseSchema = baseSchema;
+          } else {
+            baseSchema = baseSchema.optional();
+          }
           if (field.validation?.min !== undefined)
             baseSchema = baseSchema.min(field.validation.min);
           if (field.validation?.max !== undefined)
@@ -38,19 +44,23 @@ export function makeZodSchema(fields: FormField[]): z.ZodObject<any> {
         case "select":
         case "radio":
           baseSchema = z.string();
-          if (field.required) {
+          if (field.required && !field?.visibility?.dependsOn) {
             baseSchema = baseSchema
               .min(1)
               .nonempty("This field is required");
+          } else {
+            baseSchema = baseSchema.optional();
           }
           break;
 
         case "checkbox":
           baseSchema = z.array(z.string());
-          if (field.required) {
+          if (field.required && !field?.visibility?.dependsOn) {
             baseSchema = baseSchema
               .min(1)
               .nonempty("This field is required");
+          } else {
+            baseSchema = baseSchema.optional();
           }
           break;
 

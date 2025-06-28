@@ -44,7 +44,6 @@ export function FormField({ field }: FormFieldProps) {
   switch (field.type) {
     case "text":
     case "date":
-    case "number":
       return (
         <ShadcnFormField
           control={control}
@@ -57,6 +56,34 @@ export function FormField({ field }: FormFieldProps) {
                   {...rhfField}
                   type={field.type}
                   value={rhfField.value ?? ""}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+      );
+
+    case "number":
+      return (
+        <ShadcnFormField
+          control={control}
+          name={field.id}
+          render={({ field: rhfField }) => (
+            <FormItem>
+              <FormLabel>{field.label}</FormLabel>
+              <FormControl>
+                <Input
+                  {...rhfField}
+                  type={"number"}
+                  value={rhfField.value ?? ""}
+                  onChange={(e) =>
+                    rhfField.onChange(
+                      e.target.value === ""
+                        ? undefined
+                        : Number(e.target.value)
+                    )
+                  }
                 />
               </FormControl>
               <FormMessage />
